@@ -1,7 +1,7 @@
 import {
-    FILTER_DATA_BY_DATE,
-    FILTER_DATA_BY_STATUS,
-    FILTER_DATA_BY_TYPE,
+  FILTER_DATA_BY_DATE,
+  FILTER_DATA_BY_STATUS,
+  FILTER_DATA_BY_TYPE,
   GET_DATA,
   LOADING_DATA,
   LOADING_ERROR,
@@ -65,9 +65,8 @@ export const filterDataByDate = (date) => async (dispatch) => {
 export const handlePagination = (page) => async (dispatch) => {
   dispatch({ type: LOADING_DATA });
   try {
-    console.log("pagination", page);
     const res = await axios.get("https://api.spacexdata.com/v3/capsules");
-   
+
     let end = Number(page) * 10;
     let start = end - 10;
     let newData = res.data.splice(start, end);
