@@ -1,15 +1,25 @@
-import { Card, CardBody, Text } from "@chakra-ui/react";
+import { Button, Card, CardBody, Text, useDisclosure } from "@chakra-ui/react";
 import React from "react";
+import { useState } from "react";
+import ModalBox from "./Modal";
 
-const CardBox = () => {
+const CardBox = ({info}) => {
+    const [isOpen,setIsOpen]=useState(false)
+    const onOpen=()=>{
+        setIsOpen(true)
+    }
+    const onClose=()=>{
+    setIsOpen(false)
+    }
   return (
-    <Card>
+    <Card bg="#a0c4e0">
       <CardBody>
-        <Text>Serial:c101</Text>
-        <Text>Status:c101</Text>
-        <Text>type:c101</Text>
-        
+        <Text>Capsule Serial: {info.capsule_serial}</Text>
+        <Text>Type: {info.type}</Text>
+        <Text>Status: {info.status}</Text>
       </CardBody>
+      <Button onClick={onOpen} bg="Highlight">More Details</Button>
+      <ModalBox isOpen={isOpen} onClose={onClose} info={info} />
     </Card>
   );
 };

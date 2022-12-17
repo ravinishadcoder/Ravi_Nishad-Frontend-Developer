@@ -13,7 +13,7 @@ function App() {
      <Navbar/>
      <Banner/>
      <DataGrid/>
-     <CardBox/>
+     {/* <CardBox/> */}
     </div>
   );
 }

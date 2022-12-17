@@ -1,0 +1,7 @@
+export const GET_DATA="action/get_data"
+export const FILTER_DATA_BY_TYPE="action/filter_data/type"
+export const FILTER_DATA_BY_STATUS="action/filter_data/status"
+export const FILTER_DATA_BY_DATE="action/filter_data/date"
+export const LOADING_ERROR="action/loading_error"
+export const LOADING_DATA="action/loading_data"
+export const Pagination_DATA="action/pagination"
